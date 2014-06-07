@@ -5,18 +5,19 @@ Ext.application({
             fullscreen: true,
             items: [{
                 xtype: 'titlebar',
-                title: 'FormPanel example',
-                docked: 'top'
+                title: 'Iniciar Sesion',
+                docked: 'bottom',
+                style: 'background:red'
             }, {
                 xtype: 'fieldset',
                 items: [{
                     xtype: 'textfield',
                     name: 'fname',
-                    label: 'First name:'
+                    label: 'Nombre de Usuario:'
                 }, {
-                    xtype: 'textfield',
+                    xtype: 'passwordfield',
                     name: 'lname',
-                    label: 'Last name:'
+                    label: 'Contraseña:'
                 }] // items
             }, {
                 xtype: 'toolbar',
@@ -29,7 +30,7 @@ Ext.application({
                     text: 'Reset',
                     ui: 'decline',
                     handler: function (btn, evt) {
-                        Ext.Msg.confirm('', 'Are you sure you want to reset this form?', function (btn) {
+                        Ext.Msg.confirm('', 'AEstas seguro que deseas resetear el formulario?', function (btn) {
                             if (btn === 'yes') {
                                 contactForm.setValues({
                                     fname: '',
